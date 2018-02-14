@@ -1,0 +1,39 @@
+= Document Title
+Author name <author.name@host.com>
+:doctype: article
+:encoding: utf-8
+:lang: en
+:toc: left
+:numbered:
+:imagesdir: images
+ifdef::backend-pdf[:imagesdir: {outdir}/{imagesdir}]
+:icons: font
+
+Describe the document here.
+
+== Title for Section 1
+
+This is the content for section 1.
+
+[TIP]
+====
+Asciidoctor provides a very helpful  http://asciidoctor.org/docs/asciidoc-writers-guide/[Writers Guide].
+====
+
+=== Subsection
+
+Content for subsection
+
+=== Diagram Support
+Using http://asciidoctor.org/docs/asciidoctor-diagram/[asciidoctor-diagram] many custom diagrams can be included in the document.
+
+[plantuml, diagram, png]
+.Diagram Title
+....
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
