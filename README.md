@@ -1,4 +1,4 @@
-\# Document Title
+# Document Title
 
 * Content for this guide is in Asciidoc format and the entry file is `contents/index.adoc`.
 * Place new images under `contents/images`.
