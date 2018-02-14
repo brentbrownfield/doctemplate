@@ -1,4 +1,4 @@
-# Document Title
+\# Document Title
 
 * Content for this guide is in Asciidoc format and the entry file is `contents/index.adoc`.
 * Place new images under `contents/images`.
@@ -32,8 +32,8 @@ Atom configuration options can be set from the command line using the following 
 
 |Key | Value|
 | ---| -----|
-|http-proxy | "http://username:password@<Proxy IP or Host Name>:<Proxy Port>"
-|https-proxy | "http://username:password@<Proxy IP or Host Name>:<Proxy Port>/"
+|http-proxy | "http://username:password@<Proxy IP or Host Name\>:<Proxy Port\>"
+|https-proxy | "http://username:password@<Proxy IP or Host Name\>:<Proxy Port\>"
 |strict-ssl | false
 
 ## ERD
