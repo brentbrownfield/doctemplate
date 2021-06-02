@@ -1,32 +1,29 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath "org.asciidoctor:asciidoctor-gradle-plugin:1.5.3"
-        classpath "org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.15"
-        classpath 'org.asciidoctor:asciidoctorj-diagram:1.5.4'
-    }
+plugins {
+    id 'org.asciidoctor.jvm.convert' version '3.1.0' 
+    id 'org.asciidoctor.jvm.pdf' version '3.1.0'
 }
 
-apply plugin: 'org.asciidoctor.convert'
+repositories {
+    mavenCentral()
+}
 
 asciidoctorj {
-	version = '1.5.5'
+    modules {
+       diagram.use()
+    }
 }
 
 asciidoctor {
-    // enable the Asciidoctor Diagram extension
-    requires 'asciidoctor-diagram'
+    outputOptions {
+        backends = ["html5","pdf"]
+        separateOutputDirs = false
+    }
 
-    separateOutputDirs false
     sourceDir = file('contents')
     sources {
       include 'index.adoc'
     }
     outputDir "${buildDir}/"
-    backends = ["html5","pdf"]
 
     attributes 'outdir': outputDir.absolutePath,
 				'source-highlighter': 'coderay@', // TODO switch to 'rouge' once supported by the html5 backend and on MS Windows
@@ -35,5 +32,5 @@ asciidoctor {
 				'icons': 'font',
 				'sectanchors': true,
 				'idprefix': '',
-        'idseparator': '-'
+                'idseparator': '-'
 }
